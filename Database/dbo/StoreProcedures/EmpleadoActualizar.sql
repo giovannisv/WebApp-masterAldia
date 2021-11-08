@@ -4,7 +4,9 @@
 	@PrimerApellido varchar(50),
 	@SegundoApellido varchar(50),
 	@Edad int, 
-	@FechaNacimiento Datetime
+	@FechaNacimiento Datetime,
+	@TipoIdentificacion varchar(50),
+	@Identificacion int
 
 
 AS BEGIN
@@ -19,7 +21,9 @@ SET NOCOUNT ON
 	 PrimerApellido=@PrimerApellido,
 	 SegundoApellido=@SegundoApellido,
 	 Edad= @Edad,
-	 FechaNacimiento=@FechaNacimiento
+	 FechaNacimiento=@FechaNacimiento,
+	 TipoIdentificacion=@TipoIdentificacion,
+	 Identificacion=@Identificacion
 	WHERE 
 	       IdEmpleado=@IdEmpleado
 	

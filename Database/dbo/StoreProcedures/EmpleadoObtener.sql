@@ -9,7 +9,9 @@ AS BEGIN
      E.PrimerApellido,
      E.SegundoApellido,
      E.Edad,
-     E.FechaNacimiento    
+     E.FechaNacimiento, 
+     E.TipoIdentificacion,
+     E.Identificacion
     FROM dbo.Empleado E
     WHERE
     (@IdEmpleado IS NULL OR IdEmpleado=@IdEmpleado)
