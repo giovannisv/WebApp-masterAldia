@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[EmpleadoInsertar]
+﻿Create PROCEDURE [dbo].[EmpleadoInsertar]
 	@Nombre varchar(50),
 	@PrimerApellido varchar(50),
 	@SegundoApellido varchar(50),
