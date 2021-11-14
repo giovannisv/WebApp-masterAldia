@@ -20,7 +20,7 @@ namespace WebApp.Pages.Identificacion
         }
 
         [BindProperty]
-        public IdentificacionEntity Entity { get; set; } = new IdentificacionEntity();
+        public TipoIdentificacionEntity Entity { get; set; } = new TipoIdentificacionEntity();
 
         [BindProperty(SupportsGet = true)]
         public int? id { get; set; }

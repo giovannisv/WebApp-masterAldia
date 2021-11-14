@@ -10,11 +10,11 @@ namespace WBL
 {
            public interface IIdentificacionService
         {
-            Task<DBEntity> Create(IdentificacionEntity entity);
-            Task<DBEntity> Delete(IdentificacionEntity entity);
-            Task<IEnumerable<IdentificacionEntity>> Get();
-            Task<IdentificacionEntity> GetById(IdentificacionEntity entity);
-            Task<DBEntity> Update(IdentificacionEntity entity);
+            Task<DBEntity> Create(TipoIdentificacionEntity entity);
+            Task<DBEntity> Delete(TipoIdentificacionEntity entity);
+            Task<IEnumerable<TipoIdentificacionEntity>> Get();
+            Task<TipoIdentificacionEntity> GetById(TipoIdentificacionEntity entity);
+            Task<DBEntity> Update(TipoIdentificacionEntity entity);
         }
 
         public class IdentificacionService : IIdentificacionService
@@ -32,11 +32,11 @@ namespace WBL
             //Metodo Get
 
 
-            public async Task<IEnumerable<IdentificacionEntity>> Get()
+            public async Task<IEnumerable<TipoIdentificacionEntity>> Get()
             {
                 try
                 {
-                    var result = sql.QueryAsync<IdentificacionEntity>("dbo.IdentificacionObtener");
+                    var result = sql.QueryAsync<TipoIdentificacionEntity>("dbo.IdentificacionObtener");
 
                     return await result;
                 }
@@ -50,11 +50,11 @@ namespace WBL
             }
 
             //Metodo GetById
-            public async Task<IdentificacionEntity> GetById(IdentificacionEntity entity)
+            public async Task<TipoIdentificacionEntity> GetById(TipoIdentificacionEntity entity)
             {
                 try
                 {
-                    var result = sql.QueryFirstAsync<IdentificacionEntity>("dbo.IdentificacionObtener", new
+                    var result = sql.QueryFirstAsync<TipoIdentificacionEntity>("dbo.IdentificacionObtener", new
                     { entity.IdCedula });
 
                     return await result;
@@ -68,7 +68,7 @@ namespace WBL
 
             //Metodo Create
 
-            public async Task<DBEntity> Create(IdentificacionEntity entity)
+            public async Task<DBEntity> Create(TipoIdentificacionEntity entity)
             {
                 try
                 {
@@ -91,7 +91,7 @@ namespace WBL
             }
 
             //Metodo Update
-            public async Task<DBEntity> Update(IdentificacionEntity entity)
+            public async Task<DBEntity> Update(TipoIdentificacionEntity entity)
             {
                 try
                 {
@@ -114,7 +114,7 @@ namespace WBL
             }
 
             //Metodo Delete
-            public async Task<DBEntity> Delete(IdentificacionEntity entity)
+            public async Task<DBEntity> Delete(TipoIdentificacionEntity entity)
             {
                 try
                 {

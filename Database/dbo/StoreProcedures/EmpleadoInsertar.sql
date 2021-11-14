@@ -1,11 +1,13 @@
 ﻿Create PROCEDURE [dbo].[EmpleadoInsertar]
+	@IdTipoIdentificacion int,
+	@Identificacion Varchar (50),
 	@Nombre varchar(50),
 	@PrimerApellido varchar(50),
 	@SegundoApellido varchar(50),
 	@Edad int, 
-	@FechaNacimiento Datetime,
-	@TipoIdentificacion varchar(50),
-	@Identificacion int
+	@FechaNacimiento Datetime
+	
+	
 
 
 AS BEGIN
@@ -16,24 +18,27 @@ SET NOCOUNT ON
     BEGIN TRY
 	
 	INSERT INTO dbo.Empleado
-	(Nombre,
+	(
+     IdTipoIdentificacion,
+	 Identificacion,
+	 Nombre,
 	 PrimerApellido,
 	 SegundoApellido,
 	 Edad,
-	 FechaNacimiento,
-	 TipoIdentificacion,
-	 Identificacion
+	 FechaNacimiento
+	 
 
 	)
 	VALUES
 	(
+	@IdTipoIdentificacion,
+	@Identificacion,
 	@Nombre,
 	@PrimerApellido,
 	@SegundoApellido,
 	@Edad,
-	@FechaNacimiento,
-	@TipoIdentificacion,
-	@Identificacion 
+	@FechaNacimiento
+	
 	)
 
   COMMIT TRANSACTION TRASA

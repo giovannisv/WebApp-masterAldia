@@ -1,12 +1,13 @@
 ﻿CREATE PROCEDURE [dbo].[EmpleadoActualizar]
     @IdEmpleado int,
+	@IdTipoIdentificacion int,
+	@Identificacion varchar (50),
 	@Nombre varchar(50),
 	@PrimerApellido varchar(50),
 	@SegundoApellido varchar(50),
 	@Edad int, 
-	@FechaNacimiento Datetime,
-	@TipoIdentificacion varchar(50),
-	@Identificacion int
+	@FechaNacimiento Datetime
+	
 
 
 AS BEGIN
@@ -17,13 +18,14 @@ SET NOCOUNT ON
     BEGIN TRY
 	
 	UPDATE dbo.Empleado SET
+	IdTipoIdentificacion=@IdTipoIdentificacion,
+	Identificacion=@Identificacion,
 	Nombre= @Nombre,
 	 PrimerApellido=@PrimerApellido,
 	 SegundoApellido=@SegundoApellido,
 	 Edad= @Edad,
-	 FechaNacimiento=@FechaNacimiento,
-	 TipoIdentificacion=@TipoIdentificacion,
-	 Identificacion=@Identificacion
+	 FechaNacimiento=@FechaNacimiento
+	 
 	WHERE 
 	       IdEmpleado=@IdEmpleado
 	

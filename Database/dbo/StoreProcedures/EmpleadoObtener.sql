@@ -5,14 +5,20 @@ AS BEGIN
 
   SELECT 
      E.IdEmpleado,
+     E.Identificacion,
      E.Nombre,
      E.PrimerApellido,
      E.SegundoApellido,
      E.Edad,
-     E.FechaNacimiento, 
-     E.TipoIdentificacion,
-     E.Identificacion
+     E.FechaNacimiento,
+     
+     T.IdTipoIdentificacion,
+     T.Descripcion
+
+
     FROM dbo.Empleado E
+    INNER JOIN TipoIdentificacion T
+    ON E.IdTipoIdentificacion = T.IdTipoIdentificacion
     WHERE
     (@IdEmpleado IS NULL OR IdEmpleado=@IdEmpleado)
 

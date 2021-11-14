@@ -19,7 +19,7 @@ namespace WebApp.Pages.Identificacion
         }
 
 
-        public IEnumerable<IdentificacionEntity> GridList { get; set; } = new List<IdentificacionEntity>();
+        public IEnumerable<TipoIdentificacionEntity> GridList { get; set; } = new List<TipoIdentificacionEntity>();
 
         public string Mensaje { get; set; } = "";
         public async Task<IActionResult> OnGet()
