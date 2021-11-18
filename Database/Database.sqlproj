@@ -67,9 +67,6 @@
     <Build Include="dbo\StoreProcedures\EmpleadoEliminar.sql" />
     <Build Include="dbo\StoreProcedures\EmpleadoInsertar.sql" />
     <Build Include="dbo\StoreProcedures\EmpleadoObtener.sql" />
-    <Build Include="dbo\StoreProcedures\IdentificacionActualizar.sql" />
-    <Build Include="dbo\StoreProcedures\IdentificacionEliminar.sql" />
-    <Build Include="dbo\StoreProcedures\IdentificacionInsertar.sql" />
-    <Build Include="dbo\StoreProcedures\IdentificacionObtener.sql" />
+    <Build Include="dbo\StoreProcedures\TipoIdentificacionLista.sql" />
   </ItemGroup>
 </Project>
