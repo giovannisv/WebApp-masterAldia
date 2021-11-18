@@ -12,14 +12,17 @@ namespace WebApp.Pages.Empleado
     public class EditModel : PageModel
     {
         private readonly IEmpleadoService empleadoService;
+        private readonly IdentificacionServicio identificacionServicio;
 
-        public EditModel(IEmpleadoService empleadoService)
+        public EditModel(IEmpleadoService empleadoService,IdentificacionServicio identificacionServicio)
         {
             this.empleadoService = empleadoService;
+            this.identificacionServicio = identificacionServicio; 
         }
 
         [BindProperty]
         public EmpleadoEntity Entity { get; set; } = new EmpleadoEntity();
+        public IEnumerable<TipoIdentificacionEntity> TipoIdentificacionLista { get;set; } = new List<TipoIdentificacionEntity>();
 
         [BindProperty(SupportsGet = true)]
         public int? id { get; set; }
@@ -32,6 +35,7 @@ namespace WebApp.Pages.Empleado
                 {
                     Entity = await empleadoService.GetById(new() { IdEmpleado = id });
                 }
+                TipoIdentificacionLista = await identificacionServicio.GetLista();
 
                 return Page();
             }

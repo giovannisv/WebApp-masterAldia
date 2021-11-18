@@ -14,6 +14,16 @@
                 <input type="hidden" asp-for="Entity.IdEmpleado" />
 
                 <div class="form-group mb-3">
+                    <label for="Entity.IdTipoIdentificacion" class="form-label">Tipo Identificacion</label>
+                    <select asp-for="Entity.IdTipoIdentificacion" class="form-select"
+                            asp-items="@(new SelectList (Model.TipoIdentificacionLista,"IdTipoIdentificacion","Descripcion"))" required>
+                    </select>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="Entity.Identificacion" class="form-label">Identificacion</label>
+                    <input type="text" class="form-control" asp-for="Entity.Identificacion" maxlength="50" required>
+                </div>
+                <div class="form-group mb-3">
                     <label for="Entity.Nombre" class="form-label">Nombre</label>
                     <input type="text" class="form-control" asp-for="Entity.Nombre" maxlength="50" required>
                 </div>
