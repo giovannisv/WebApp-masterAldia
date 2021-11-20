@@ -59,6 +59,9 @@
     <Folder Include="dbo" />
     <Folder Include="dbo\StoreProcedures" />
     <Folder Include="dbo\Tablas" />
+    <Folder Include="acc" />
+    <Folder Include="acc\Tablas" />
+    <Folder Include="acc\StoreProcedures" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tablas\TipoIdentificacion.sql" />
@@ -68,5 +71,10 @@
     <Build Include="dbo\StoreProcedures\EmpleadoInsertar.sql" />
     <Build Include="dbo\StoreProcedures\EmpleadoObtener.sql" />
     <Build Include="dbo\StoreProcedures\TipoIdentificacionLista.sql" />
+    <Build Include="acc\Tablas\Contrato.sql" />
+    <Build Include="acc\StoreProcedures\ContratoActualizar.sql" />
+    <Build Include="acc\StoreProcedures\ContratoEliminar.sql" />
+    <Build Include="acc\StoreProcedures\ContratoInsertar.sql" />
+    <Build Include="acc\StoreProcedures\ContratoObtener.sql" />
   </ItemGroup>
 </Project>

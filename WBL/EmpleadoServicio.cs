@@ -15,6 +15,8 @@ namespace WBL
         Task<IEnumerable<EmpleadoEntity>> Get();
         Task<EmpleadoEntity> GetById(EmpleadoEntity entity);
         Task<DBEntity> Update(EmpleadoEntity entity);
+
+        Task<IEnumerable<EmpleadoEntity>> GetLista();
     }
 
     public class EmpleadoService : IEmpleadoService
@@ -47,6 +49,23 @@ namespace WBL
 
 
         }
+
+        public async Task<IEnumerable<EmpleadoEntity>> GetLista()
+        {
+
+            try
+            {
+                var result = sql.QueryAsync<EmpleadoEntity>("EmpleadoLista");
+
+                return await result;
+            }
+            catch (Exception EX)
+            {
+
+                throw;
+            }
+        }
+
 
         //Metodo GetById
         public async Task<EmpleadoEntity> GetById(EmpleadoEntity entity)
