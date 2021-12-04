@@ -11,7 +11,7 @@ var ContratoEdit;
             Save: function () {
                 if (BValidateData(this.Formulario)) {
                     Loading.fire("Guardando");
-                    App.AxiosProvider.ContratoGuardar(this.Entity).then(function (data) {
+                    App.AxiosProvider.ContratoEliminar(this.Entity).then(function (data) {
                         Loading.close();
                         if (data.CodeError == 0) {
                             Toast.fire({ title: "Se guardo correctamente", icon: "success" })
