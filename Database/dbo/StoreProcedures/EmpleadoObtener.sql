@@ -17,7 +17,7 @@ AS BEGIN
 
 
     FROM dbo.Empleado E
-    INNER JOIN TipoIdentificacion T
+    INNER JOIN dbo.TipoIdentificacion T
     ON E.IdTipoIdentificacion = T.IdTipoIdentificacion
     WHERE
     (@IdEmpleado IS NULL OR IdEmpleado=@IdEmpleado)

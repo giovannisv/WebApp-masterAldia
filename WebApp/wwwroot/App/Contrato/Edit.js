@@ -8,10 +8,19 @@ var ContratoEdit;
             Entity: Entity
         },
         methods: {
+            contratoServicio: function (entity) {
+                console.log(entity);
+                if (entity.IdContrato == null) {
+                    return App.AxiosProvider.ContratoGuardar(entity);
+                }
+                else {
+                    return App.AxiosProvider.ContratoActualizar(entity);
+                }
+            },
             Save: function () {
                 if (BValidateData(this.Formulario)) {
                     Loading.fire("Guardando");
-                    App.AxiosProvider.ContratoEliminar(this.Entity).then(function (data) {
+                    this.contratoServicio(this.Entity).then(function (data) {
                         Loading.close();
                         if (data.CodeError == 0) {
                             Toast.fire({ title: "Se guardo correctamente", icon: "success" })
@@ -20,7 +29,7 @@ var ContratoEdit;
                         else {
                             Toast.fire({ title: data.MsgError, icon: "error" });
                         }
-                    });
+                    }).catch(function (c) { return console.log(c); });
                 }
                 else {
                     Toast.fire({ title: "Por favor complete los campos requeridos" });

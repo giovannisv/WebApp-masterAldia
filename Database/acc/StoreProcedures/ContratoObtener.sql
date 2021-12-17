@@ -12,8 +12,8 @@ AS BEGIN
      E.IdEmpleado,
      E.Identificacion
 
-    FROM Contrato C
-    INNER JOIN Empleado E
+    FROM  acc.Contrato C
+    INNER JOIN dbo.Empleado E
        ON E.IdEmpleado= C.IdEmpleado
     WHERE
     (@IdContrato IS NULL OR IdContrato=@IdContrato)
